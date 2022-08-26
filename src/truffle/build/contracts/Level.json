@@ -106,7 +106,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity >=0.6.0 <0.9.0; \r\n\r\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\r\n\r\n\r\nabstract contract Level is Ownable {\r\n  function createInstance(address _player) virtual public payable returns (address);\r\n  function validateInstance(address payable _instance, address _player) virtual public returns (bool);\r\n}",
-  "sourcePath": "D:\\Trend\\cloudsec\\src\\truffle\\contracts\\Level.sol",
+  "sourcePath": "C:\\Users\\teu-intern\\Documents\\CloudSec\\src\\truffle\\contracts\\Level.sol",
   "ast": {
     "absolutePath": "project:/src/truffle/contracts/Level.sol",
     "exportedSymbols": {
@@ -394,7 +394,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-08-25T09:31:10.928Z",
+  "updatedAt": "2022-08-26T08:52:28.080Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

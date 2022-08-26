@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Logo from "./Trend_Logo.png"
 
 function Navbar({account}) {
+
+  useEffect(() => {
+
+  },[account])
   return (
     <div className='text-center'>
     <nav className='navbar navbar-dark fixed-top shadow p-0' style={{backgroundColor:'black',height:'50px'}}>

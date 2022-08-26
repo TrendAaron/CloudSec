@@ -4,8 +4,7 @@
     {
       "inputs": [],
       "stateMutability": "payable",
-      "type": "constructor",
-      "payable": true
+      "type": "constructor"
     },
     {
       "inputs": [],
@@ -18,8 +17,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -52,8 +50,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"payable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"getBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"switchOwners\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/truffle/contracts/Switch.sol\":\"Switch\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/truffle/contracts/Switch.sol\":{\"keccak256\":\"0x24329f2af02419bda4371226db9162ea5ebd65ff6bbd441de1fee818aa57e1a2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cc46c3b4e3f1dfd1bc11d296b918a71f8ad5c740521a6d83db38fde569df1976\",\"dweb:/ipfs/QmUCRJGEFHz4g4u2NaQKYt74WA9xRHtCHrJaRymkAv3Hox\"]}},\"version\":1}",
@@ -1475,7 +1472,7 @@
   "sourceMap": "67:675:16:-:0;;;165:10;157:5;;:18;;;;;;;;;;;;;;;;;;67:675;;;;;;",
   "deployedSourceMap": "67:675:16:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;635:95;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;520:106;;;:::i;:::-;;93:20;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;373:135;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;635:95;677:4;701:21;694:28;;635:95;:::o;520:106::-;266:5;;;;;;;;;;252:19;;:10;:19;;;226:106;;;;;;;;;;;;:::i;:::-;;;;;;;;;577:5:::1;::::0;::::1;;;;;;;;569:23;;:46;593:21;569:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;520:106::o:0;93:20::-;;;;;;;;;;;;:::o;373:135::-;449:10;436:23;;:9;:23;;;432:69;;480:9;472:5;;:17;;;;;;;;;;;;;;;;;;432:69;373:135;:::o;7:77:21:-;44:7;73:5;62:16;;7:77;;;:::o;90:118::-;177:24;195:5;177:24;:::i;:::-;172:3;165:37;90:118;;:::o;214:222::-;307:4;345:2;334:9;330:18;322:26;;358:71;426:1;415:9;411:17;402:6;358:71;:::i;:::-;214:222;;;;:::o;442:126::-;479:7;519:42;512:5;508:54;497:65;;442:126;;;:::o;574:96::-;611:7;640:24;658:5;640:24;:::i;:::-;629:35;;574:96;;;:::o;676:118::-;763:24;781:5;763:24;:::i;:::-;758:3;751:37;676:118;;:::o;800:222::-;893:4;931:2;920:9;916:18;908:26;;944:71;1012:1;1001:9;997:17;988:6;944:71;:::i;:::-;800:222;;;;:::o;1109:117::-;1218:1;1215;1208:12;1355:122;1428:24;1446:5;1428:24;:::i;:::-;1421:5;1418:35;1408:63;;1467:1;1464;1457:12;1408:63;1355:122;:::o;1483:139::-;1529:5;1567:6;1554:20;1545:29;;1583:33;1610:5;1583:33;:::i;:::-;1483:139;;;;:::o;1628:329::-;1687:6;1736:2;1724:9;1715:7;1711:23;1707:32;1704:119;;;1742:79;;:::i;:::-;1704:119;1862:1;1887:53;1932:7;1923:6;1912:9;1908:22;1887:53;:::i;:::-;1877:63;;1833:117;1628:329;;;;:::o;1963:169::-;2047:11;2081:6;2076:3;2069:19;2121:4;2116:3;2112:14;2097:29;;1963:169;;;;:::o;2138:171::-;2278:23;2274:1;2266:6;2262:14;2255:47;2138:171;:::o;2315:366::-;2457:3;2478:67;2542:2;2537:3;2478:67;:::i;:::-;2471:74;;2554:93;2643:3;2554:93;:::i;:::-;2672:2;2667:3;2663:12;2656:19;;2315:366;;;:::o;2687:419::-;2853:4;2891:2;2880:9;2876:18;2868:26;;2940:9;2934:4;2930:20;2926:1;2915:9;2911:17;2904:47;2968:131;3094:4;2968:131;:::i;:::-;2960:139;;2687:419;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.0 <0.9.0; \r\ncontract Switch {\r\n \r\n    address public owner;\r\n \r\n    constructor() payable  {\r\n        owner = msg.sender;\r\n    }\r\n \r\n    modifier onlyOwner {\r\n            require(\r\n                msg.sender == owner,\r\n                \"You are not the owner\"\r\n                );\r\n                _;\r\n        }\r\n \r\n    function switchOwners(address _newOwner) public {\r\n        if (tx.origin != msg.sender) {\r\n        owner = _newOwner;\r\n        }\r\n    }\r\n \r\n \r\n    function withdraw() public  onlyOwner {\r\n        payable(owner).transfer(address(this).balance);\r\n \r\n    }\r\n \r\n    function getBalance() view public returns(uint) {\r\n        return address(this).balance;\r\n    }\r\n \r\n \r\n \r\n}\r\n",
-  "sourcePath": "D:\\Trend\\cloudsec\\src\\truffle\\contracts\\Switch.sol",
+  "sourcePath": "C:\\Users\\teu-intern\\Documents\\CloudSec\\src\\truffle\\contracts\\Switch.sol",
   "ast": {
     "absolutePath": "project:/src/truffle/contracts/Switch.sol",
     "exportedSymbols": {
@@ -2354,6 +2351,12 @@
     "version": "0.8.16+commit.07a7930e.Emscripten.clang"
   },
   "networks": {
+    "1377": {
+      "events": {},
+      "links": {},
+      "address": "0x37DCd62655eA4bC8679E1dddCE50D8F362E1f66f",
+      "transactionHash": "0x0edd5f30c5c4c5a96218b40747fe7ac56237c88bcbb7dabf2ebfb1e78805673e"
+    },
     "5777": {
       "events": {},
       "links": {},
@@ -2362,8 +2365,7 @@
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-08-25T09:31:24.188Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-08-26T08:52:28.271Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

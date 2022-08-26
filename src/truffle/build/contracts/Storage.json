@@ -10,8 +10,7 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "constructor",
-      "payable": true
+      "type": "constructor"
     },
     {
       "stateMutability": "nonpayable",
@@ -28,8 +27,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -49,8 +47,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_mineAddress\",\"type\":\"address\"}],\"stateMutability\":\"payable\",\"type\":\"constructor\"},{\"stateMutability\":\"nonpayable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/truffle/contracts/Storage.sol\":\"Storage\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/truffle/contracts/Storage.sol\":{\"keccak256\":\"0x84337030b172d5ab2541a56422e4d33079a6ce2a9fc6940fafb3f778ec272f15\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c9fa70eab6403abd9889ac0f30922a876562d9658366368e564b7fef2ffd3025\",\"dweb:/ipfs/QmRHJxXim1X1XHMjrgBu7kxC56xnVJiboE6paPKHZ8ryQq\"]}},\"version\":1}",
@@ -2521,7 +2518,7 @@
   "sourceMap": "241:863:15:-:0;;;318:124;;;;;;;;;;;;;;;;;;;;;:::i;:::-;392:12;372;;:33;;;;;;;;;;;;;;;;;;424:10;416:5;;:18;;;;;;;;;;;;;;;;;;318:124;241:863;;88:117:21;197:1;194;187:12;334:126;371:7;411:42;404:5;400:54;389:65;;334:126;;;:::o;466:96::-;503:7;532:24;550:5;532:24;:::i;:::-;521:35;;466:96;;;:::o;568:122::-;641:24;659:5;641:24;:::i;:::-;634:5;631:35;621:63;;680:1;677;670:12;621:63;568:122;:::o;696:143::-;753:5;784:6;778:13;769:22;;800:33;827:5;800:33;:::i;:::-;696:143;;;;:::o;845:351::-;915:6;964:2;952:9;943:7;939:23;935:32;932:119;;;970:79;;:::i;:::-;932:119;1090:1;1115:64;1171:7;1162:6;1151:9;1147:22;1115:64;:::i;:::-;1105:74;;1061:128;845:351;;;;:::o;241:863:15:-;;;;;;;",
   "deployedSourceMap": "241:863:15:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;865:11;878:17;907:12;;;;;;;;;;;899:34;;948:39;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;899:129;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;864:164;;;;1047:6;1039:38;;;;;;;;;;;;:::i;:::-;;;;;;;;;850:251;611:106;;;:::i;:::-;;726:94;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;266:20;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;611:106;517:5;;;;;;;;;;503:19;;:10;:19;;;481:94;;;;;;;;;;;;:::i;:::-;;;;;;;;;668:5:::1;::::0;::::1;;;;;;;;660:23;;:46;684:21;660:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;611:106::o:0;726:94::-;767:4;791:21;784:28;;726:94;:::o;266:20::-;;;;;;;;;;;;:::o;7:98:21:-;58:6;92:5;86:12;76:22;;7:98;;;:::o;111:147::-;212:11;249:3;234:18;;111:147;;;;:::o;264:246::-;345:1;355:113;369:6;366:1;363:13;355:113;;;454:1;449:3;445:11;439:18;435:1;430:3;426:11;419:39;391:2;388:1;384:10;379:15;;355:113;;;502:1;493:6;488:3;484:16;477:27;326:184;264:246;;;:::o;516:386::-;620:3;648:38;680:5;648:38;:::i;:::-;702:88;783:6;778:3;702:88;:::i;:::-;695:95;;799:65;857:6;852:3;845:4;838:5;834:16;799:65;:::i;:::-;889:6;884:3;880:16;873:23;;624:278;516:386;;;;:::o;908:271::-;1038:3;1060:93;1149:3;1140:6;1060:93;:::i;:::-;1053:100;;1170:3;1163:10;;908:271;;;;:::o;1185:169::-;1269:11;1303:6;1298:3;1291:19;1343:4;1338:3;1334:14;1319:29;;1185:169;;;;:::o;1360:::-;1500:21;1496:1;1488:6;1484:14;1477:45;1360:169;:::o;1535:366::-;1677:3;1698:67;1762:2;1757:3;1698:67;:::i;:::-;1691:74;;1774:93;1863:3;1774:93;:::i;:::-;1892:2;1887:3;1883:12;1876:19;;1535:366;;;:::o;1907:419::-;2073:4;2111:2;2100:9;2096:18;2088:26;;2160:9;2154:4;2150:20;2146:1;2135:9;2131:17;2124:47;2188:131;2314:4;2188:131;:::i;:::-;2180:139;;1907:419;;;:::o;2332:77::-;2369:7;2398:5;2387:16;;2332:77;;;:::o;2415:118::-;2502:24;2520:5;2502:24;:::i;:::-;2497:3;2490:37;2415:118;;:::o;2539:222::-;2632:4;2670:2;2659:9;2655:18;2647:26;;2683:71;2751:1;2740:9;2736:17;2727:6;2683:71;:::i;:::-;2539:222;;;;:::o;2767:126::-;2804:7;2844:42;2837:5;2833:54;2822:65;;2767:126;;;:::o;2899:96::-;2936:7;2965:24;2983:5;2965:24;:::i;:::-;2954:35;;2899:96;;;:::o;3001:118::-;3088:24;3106:5;3088:24;:::i;:::-;3083:3;3076:37;3001:118;;:::o;3125:222::-;3218:4;3256:2;3245:9;3241:18;3233:26;;3269:71;3337:1;3326:9;3322:17;3313:6;3269:71;:::i;:::-;3125:222;;;;:::o;3353:171::-;3493:23;3489:1;3481:6;3477:14;3470:47;3353:171;:::o;3530:366::-;3672:3;3693:67;3757:2;3752:3;3693:67;:::i;:::-;3686:74;;3769:93;3858:3;3769:93;:::i;:::-;3887:2;3882:3;3878:12;3871:19;;3530:366;;;:::o;3902:419::-;4068:4;4106:2;4095:9;4091:18;4083:26;;4155:9;4149:4;4145:20;4141:1;4130:9;4126:17;4119:47;4183:131;4309:4;4183:131;:::i;:::-;4175:139;;3902:419;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.0 <0.9.0; \r\ncontract Mine {\r\n \r\n  address public owner;\r\n \r\n  constructor()  {\r\n    owner =  msg.sender;\r\n  }\r\n \r\n  function thisIsMine() public {\r\n    owner = msg.sender;\r\n  }\r\n\r\n}\r\n \r\ncontract Storage {\r\n \r\n  address public owner;\r\n  Mine mineContract;\r\n \r\n    constructor(address _mineAddress) payable  {\r\n        mineContract = Mine(_mineAddress);\r\n        owner = msg.sender;\r\n    }\r\n \r\n    modifier onlyOwner {\r\n        require(\r\n            msg.sender == owner,\r\n            \"You are not the owner\"\r\n            );\r\n            _;\r\n    }\r\n \r\n \r\n    function withdraw() public  onlyOwner {\r\n        payable(owner).transfer(address(this).balance);\r\n \r\n    }\r\n \r\n    function balanceOf() view public returns(uint) {\r\n        return address(this).balance;\r\n    }\r\n \r\n    fallback() external  {\r\n \r\n        (bool result, bytes memory data) = address(mineContract).delegatecall(\r\n            abi.encodeWithSignature(\"thisIsMine()\")\r\n              \r\n            \r\n        );\r\n        require(result, \"delegatecall failed\");\r\n        data; \r\n    }\r\n}\r\n",
-  "sourcePath": "D:\\Trend\\cloudsec\\src\\truffle\\contracts\\Storage.sol",
+  "sourcePath": "C:\\Users\\teu-intern\\Documents\\CloudSec\\src\\truffle\\contracts\\Storage.sol",
   "ast": {
     "absolutePath": "project:/src/truffle/contracts/Storage.sol",
     "exportedSymbols": {
@@ -3948,6 +3945,12 @@
     "version": "0.8.16+commit.07a7930e.Emscripten.clang"
   },
   "networks": {
+    "1377": {
+      "events": {},
+      "links": {},
+      "address": "0x19965671dAf1561f1A3838019478D3bBa9CCF999",
+      "transactionHash": "0x66cbbb2c353f427ea8fd406fa90fa806bfc971e72effc6233b9644841ddafe05"
+    },
     "5777": {
       "events": {},
       "links": {},
@@ -3956,8 +3959,7 @@
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-08-25T09:31:16.744Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-08-26T08:52:28.262Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

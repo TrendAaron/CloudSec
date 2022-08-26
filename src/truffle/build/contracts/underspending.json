@@ -17,8 +17,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -56,8 +55,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"checkBalanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"balance\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amountToExchange\",\"type\":\"uint256\"}],\"name\":\"exchange\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"playerAllowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/truffle/contracts/Underspending.sol\":\"underspending\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/truffle/contracts/Underspending.sol\":{\"keccak256\":\"0x896c87ab8b6ed4ebfb2294321b8579b70324a03cc39b2a30656bc31a4d389e30\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3845ca8db4330311f51df1dcead8b0462bba170aeafcccbcb367a9bb6d3c890b\",\"dweb:/ipfs/QmdKiSDPKNvy4W7sKyYuXM83MUyWxwdTQadrLKDeT2VU29\"]}},\"version\":1}",
@@ -2121,7 +2119,7 @@
   "sourceMap": "73:614:18:-:0;;;204:1;176:29;;214:72;;;;;;;;;;277:3;259:15;:21;;;236:8;:20;245:10;236:20;;;;;;;;;;;;;;;:44;;;;73:614;;;;;;",
   "deployedSourceMap": "73:614:18:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;573:111;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;294:271;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;141:30;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;573:111;634:12;662:8;:16;671:6;662:16;;;;;;;;;;;;;;;;655:23;;573:111;;;:::o;294:271::-;352:4;417:1;396:17;373:8;:20;382:10;373:20;;;;;;;;;;;;;;;;:40;;;;:::i;:::-;:45;;365:54;;;;;;452:17;428:8;:20;437:10;428:20;;;;;;;;;;;;;;;;:41;;;;;;;:::i;:::-;;;;;;;;521:17;;501;:37;;;;:::i;:::-;476:8;:20;485:10;476:20;;;;;;;;;;;;;;;;:63;;;;;;;:::i;:::-;;;;;;;;555:4;548:11;;294:271;;;:::o;141:30::-;;;;:::o;88:117:21:-;197:1;194;187:12;334:126;371:7;411:42;404:5;400:54;389:65;;334:126;;;:::o;466:96::-;503:7;532:24;550:5;532:24;:::i;:::-;521:35;;466:96;;;:::o;568:122::-;641:24;659:5;641:24;:::i;:::-;634:5;631:35;621:63;;680:1;677;670:12;621:63;568:122;:::o;696:139::-;742:5;780:6;767:20;758:29;;796:33;823:5;796:33;:::i;:::-;696:139;;;;:::o;841:329::-;900:6;949:2;937:9;928:7;924:23;920:32;917:119;;;955:79;;:::i;:::-;917:119;1075:1;1100:53;1145:7;1136:6;1125:9;1121:22;1100:53;:::i;:::-;1090:63;;1046:117;841:329;;;;:::o;1176:77::-;1213:7;1242:5;1231:16;;1176:77;;;:::o;1259:118::-;1346:24;1364:5;1346:24;:::i;:::-;1341:3;1334:37;1259:118;;:::o;1383:222::-;1476:4;1514:2;1503:9;1499:18;1491:26;;1527:71;1595:1;1584:9;1580:17;1571:6;1527:71;:::i;:::-;1383:222;;;;:::o;1611:122::-;1684:24;1702:5;1684:24;:::i;:::-;1677:5;1674:35;1664:63;;1723:1;1720;1713:12;1664:63;1611:122;:::o;1739:139::-;1785:5;1823:6;1810:20;1801:29;;1839:33;1866:5;1839:33;:::i;:::-;1739:139;;;;:::o;1884:329::-;1943:6;1992:2;1980:9;1971:7;1967:23;1963:32;1960:119;;;1998:79;;:::i;:::-;1960:119;2118:1;2143:53;2188:7;2179:6;2168:9;2164:22;2143:53;:::i;:::-;2133:63;;2089:117;1884:329;;;;:::o;2219:90::-;2253:7;2296:5;2289:13;2282:21;2271:32;;2219:90;;;:::o;2315:109::-;2396:21;2411:5;2396:21;:::i;:::-;2391:3;2384:34;2315:109;;:::o;2430:210::-;2517:4;2555:2;2544:9;2540:18;2532:26;;2568:65;2630:1;2619:9;2615:17;2606:6;2568:65;:::i;:::-;2430:210;;;;:::o;2646:180::-;2694:77;2691:1;2684:88;2791:4;2788:1;2781:15;2815:4;2812:1;2805:15;2832:194;2872:4;2892:20;2910:1;2892:20;:::i;:::-;2887:25;;2926:20;2944:1;2926:20;:::i;:::-;2921:25;;2970:1;2967;2963:9;2955:17;;2994:1;2988:4;2985:11;2982:37;;;2999:18;;:::i;:::-;2982:37;2832:194;;;;:::o;3032:348::-;3072:7;3095:20;3113:1;3095:20;:::i;:::-;3090:25;;3129:20;3147:1;3129:20;:::i;:::-;3124:25;;3317:1;3249:66;3245:74;3242:1;3239:81;3234:1;3227:9;3220:17;3216:105;3213:131;;;3324:18;;:::i;:::-;3213:131;3372:1;3369;3365:9;3354:20;;3032:348;;;;:::o;3386:191::-;3426:3;3445:20;3463:1;3445:20;:::i;:::-;3440:25;;3479:20;3497:1;3479:20;:::i;:::-;3474:25;;3522:1;3519;3515:9;3508:16;;3543:3;3540:1;3537:10;3534:36;;;3550:18;;:::i;:::-;3534:36;3386:191;;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.0 <0.9.0; \r\n\r\n\r\n\r\ncontract underspending {\r\n\r\n  mapping(address => uint) balances;\r\n  uint256 public playerAllowance;\r\n  uint256 coinExchangeValue = 2;\r\n  \r\n  constructor()  {\r\n    balances[msg.sender] = playerAllowance = 100;\r\n  }\r\n  \r\n  function exchange(uint _amountToExchange) public returns (bool) {\r\n    require(balances[msg.sender] - _amountToExchange >= 0);\r\n\r\n    balances[msg.sender] -= _amountToExchange;\r\n    balances[msg.sender] += (_amountToExchange * coinExchangeValue);\r\n\r\n    return true;\r\n  }\r\n  \r\n  function checkBalanceOf(address _owner) public view returns (uint balance) {\r\n    return balances[_owner];\r\n  }\r\n}\r\n",
-  "sourcePath": "D:\\Trend\\cloudsec\\src\\truffle\\contracts\\Underspending.sol",
+  "sourcePath": "C:\\Users\\teu-intern\\Documents\\CloudSec\\src\\truffle\\contracts\\Underspending.sol",
   "ast": {
     "absolutePath": "project:/src/truffle/contracts/Underspending.sol",
     "exportedSymbols": {
@@ -3057,6 +3055,12 @@
     "version": "0.8.16+commit.07a7930e.Emscripten.clang"
   },
   "networks": {
+    "1377": {
+      "events": {},
+      "links": {},
+      "address": "0xb9b6c3D23dc25ADfD34A877dE9076F9f29189804",
+      "transactionHash": "0xab14ef6610c775925e5ea473c45c025acb6d9e5dfbb428b9377ad30d4235265f"
+    },
     "5777": {
       "events": {},
       "links": {},
@@ -3065,8 +3069,7 @@
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-08-25T09:31:28.017Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-08-26T08:52:28.334Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

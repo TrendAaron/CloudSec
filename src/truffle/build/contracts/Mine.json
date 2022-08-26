@@ -17,8 +17,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -336,7 +335,7 @@
   "sourceMap": "67:169:15:-:0;;;117:47;;;;;;;;;;148:10;139:5;;:19;;;;;;;;;;;;;;;;;;67:169;;;;;;",
   "deployedSourceMap": "67:169:15:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;171:60;;;:::i;:::-;;89:20;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;171:60;215:10;207:5;;:18;;;;;;;;;;;;;;;;;;171:60::o;89:20::-;;;;;;;;;;;;:::o;7:126:21:-;44:7;84:42;77:5;73:54;62:65;;7:126;;;:::o;139:96::-;176:7;205:24;223:5;205:24;:::i;:::-;194:35;;139:96;;;:::o;241:118::-;328:24;346:5;328:24;:::i;:::-;323:3;316:37;241:118;;:::o;365:222::-;458:4;496:2;485:9;481:18;473:26;;509:71;577:1;566:9;562:17;553:6;509:71;:::i;:::-;365:222;;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.0 <0.9.0; \r\ncontract Mine {\r\n \r\n  address public owner;\r\n \r\n  constructor()  {\r\n    owner =  msg.sender;\r\n  }\r\n \r\n  function thisIsMine() public {\r\n    owner = msg.sender;\r\n  }\r\n\r\n}\r\n \r\ncontract Storage {\r\n \r\n  address public owner;\r\n  Mine mineContract;\r\n \r\n    constructor(address _mineAddress) payable  {\r\n        mineContract = Mine(_mineAddress);\r\n        owner = msg.sender;\r\n    }\r\n \r\n    modifier onlyOwner {\r\n        require(\r\n            msg.sender == owner,\r\n            \"You are not the owner\"\r\n            );\r\n            _;\r\n    }\r\n \r\n \r\n    function withdraw() public  onlyOwner {\r\n        payable(owner).transfer(address(this).balance);\r\n \r\n    }\r\n \r\n    function balanceOf() view public returns(uint) {\r\n        return address(this).balance;\r\n    }\r\n \r\n    fallback() external  {\r\n \r\n        (bool result, bytes memory data) = address(mineContract).delegatecall(\r\n            abi.encodeWithSignature(\"thisIsMine()\")\r\n              \r\n            \r\n        );\r\n        require(result, \"delegatecall failed\");\r\n        data; \r\n    }\r\n}\r\n",
-  "sourcePath": "D:\\Trend\\cloudsec\\src\\truffle\\contracts\\Storage.sol",
+  "sourcePath": "C:\\Users\\teu-intern\\Documents\\CloudSec\\src\\truffle\\contracts\\Storage.sol",
   "ast": {
     "absolutePath": "project:/src/truffle/contracts/Storage.sol",
     "exportedSymbols": {
@@ -1763,6 +1762,12 @@
     "version": "0.8.16+commit.07a7930e.Emscripten.clang"
   },
   "networks": {
+    "1377": {
+      "events": {},
+      "links": {},
+      "address": "0x84414DD73A3a55D3b8c778b9348C60dd7811205e",
+      "transactionHash": "0xf756562f73e77587eb03b854de49f58d6185a56fcd5ca7d2d48e9931d50ec854"
+    },
     "5777": {
       "events": {},
       "links": {},
@@ -1771,8 +1776,7 @@
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-08-25T09:31:14.234Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-08-26T08:52:28.254Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
