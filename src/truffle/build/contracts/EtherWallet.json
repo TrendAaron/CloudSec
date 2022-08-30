@@ -4,7 +4,8 @@
     {
       "inputs": [],
       "stateMutability": "payable",
-      "type": "constructor"
+      "type": "constructor",
+      "payable": true
     },
     {
       "anonymous": false,
@@ -39,7 +40,8 @@
     },
     {
       "stateMutability": "payable",
-      "type": "fallback"
+      "type": "fallback",
+      "payable": true
     },
     {
       "inputs": [],
@@ -52,18 +54,21 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "stateMutability": "payable",
-      "type": "receive"
+      "type": "receive",
+      "payable": true
     },
     {
       "inputs": [],
       "name": "invest",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [],
@@ -76,7 +81,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -90,7 +96,8 @@
       "name": "deposit",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -121,7 +128,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"payable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"func\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"Log\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getInvestments\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"invest\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"send\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/truffle/contracts/EtherWallet.sol\":\"EtherWallet\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/math/SafeMath.sol\":{\"keccak256\":\"0x0f633a0223d9a1dcccfcf38a64c9de0874dfcbfac0c6941ccf074d63a2ce0e1e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://864a40efcffdf408044c332a5aa38ec5618ed7b4eecb8f65faf45671bd6cdc65\",\"dweb:/ipfs/QmQJquTMtc6fgm5JQzGdsGpA2fqBe3MHWEdt2qzaLySMdN\"]},\"project:/src/truffle/contracts/EtherWallet.sol\":{\"keccak256\":\"0x8d745920305db238d86c9c63ae30a056fd77a876fec8bc13cb28b107adabafd2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://270bdf4c152cc96c869086c38618e87fad249e44d4d63f885a5d0eb2f403e63b\",\"dweb:/ipfs/QmYJ1QaoMXp36mLwGBRHD92R9Lgoo25iucBEhRThESQa5C\"]}},\"version\":1}",
@@ -3409,7 +3417,7 @@
   "sourceMap": "123:1551:7:-:0;;;380:10;364:5;;:27;;;;;;;;;;;;;;;;;;428:15;402:11;:23;414:10;402:23;;;;;;;;;;;;;;;:41;;;;123:1551;;;;;;",
   "deployedSourceMap": "123:1551:7:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1615:1;1589:11;:23;1601:10;1589:23;;;;;;;;;;;;;;;;:27;:44;;;;;1632:1;1620:9;:13;1589:44;1581:53;;;;;;1653:10;1645:5;;:18;;;;;;;;;;;;;;;;;;123:1551;1479:48;1495:10;1507:9;1518:8;;1479:48;;;;;;;;;:::i;:::-;;;;;;;;123:1551;930:102;;;;;;;;;;;;;:::i;:::-;;1329:98;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;184:20;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;1094:227;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;:::i;:::-;;1040:46;;;:::i;:::-;;817:105;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;572:237;;;:::i;:::-;;930:102;513:5;;;;;;;;;;499:19;;:10;:19;;;491:53;;;;;;;;;;;;:::i;:::-;;;;;;;;;986:5:::1;::::0;::::1;;;;;;;;978:23;;:46;1002:21;978:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;930:102::o:0;1329:98::-;1371:7;1398:21;1391:28;;1329:98;:::o;184:20::-;;;;;;;;;;;;:::o;1094:227::-;513:5;;;;;;;;;;499:19;;:10;:19;;;491:53;;;;;;;;;;;;:::i;:::-;;;;;;;;;1190:5:::1;::::0;::::1;;;;;;;;1176:19;;:10;:19;;::::0;1172:94:::1;;1212:2;:11;;:19;1224:6;1212:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;1248:7;;1172:94;1276:37;;;;;;;;;;:::i;:::-;;;;;;;;555:1;1094:227:::0;;:::o;1040:46::-;513:5;;;;;;;;;;499:19;;:10;:19;;;491:53;;;;;;;;;;;;:::i;:::-;;;;;;;;;1040:46::o;817:105::-;864:7;891:11;:23;903:10;891:23;;;;;;;;;;;;;;;;884:30;;817:105;:::o;572:237::-;636:11;624:9;:23;616:32;;;;;;686:9;659:11;:23;671:10;659:23;;;;;;;;;;;;;;;;:36;;;;;;;:::i;:::-;;;;;;;;737:11;:18;749:5;;;;;;;;;;;737:18;;;;;;;;;;;;;;;;710:11;:23;722:10;710:23;;;;;;;;;;;;;;;;:45;706:96;;780:10;772:5;;:18;;;;;;;;;;;;;;;;;;706:96;572:237::o;7:169:21:-;91:11;125:6;120:3;113:19;165:4;160:3;156:14;141:29;;7:169;;;;:::o;182:158::-;322:10;318:1;310:6;306:14;299:34;182:158;:::o;346:365::-;488:3;509:66;573:1;568:3;509:66;:::i;:::-;502:73;;584:93;673:3;584:93;:::i;:::-;702:2;697:3;693:12;686:19;;346:365;;;:::o;717:126::-;754:7;794:42;787:5;783:54;772:65;;717:126;;;:::o;849:96::-;886:7;915:24;933:5;915:24;:::i;:::-;904:35;;849:96;;;:::o;951:118::-;1038:24;1056:5;1038:24;:::i;:::-;1033:3;1026:37;951:118;;:::o;1075:77::-;1112:7;1141:5;1130:16;;1075:77;;;:::o;1158:118::-;1245:24;1263:5;1245:24;:::i;:::-;1240:3;1233:37;1158:118;;:::o;1282:168::-;1365:11;1399:6;1394:3;1387:19;1439:4;1434:3;1430:14;1415:29;;1282:168;;;;:::o;1456:146::-;1553:6;1548:3;1543;1530:30;1594:1;1585:6;1580:3;1576:16;1569:27;1456:146;;;:::o;1608:102::-;1649:6;1700:2;1696:7;1691:2;1684:5;1680:14;1676:28;1666:38;;1608:102;;;:::o;1738:314::-;1834:3;1855:70;1918:6;1913:3;1855:70;:::i;:::-;1848:77;;1935:56;1984:6;1979:3;1972:5;1935:56;:::i;:::-;2016:29;2038:6;2016:29;:::i;:::-;2011:3;2007:39;2000:46;;1738:314;;;;;:::o;2058:857::-;2336:4;2374:3;2363:9;2359:19;2351:27;;2424:9;2418:4;2414:20;2410:1;2399:9;2395:17;2388:47;2452:131;2578:4;2452:131;:::i;:::-;2444:139;;2593:72;2661:2;2650:9;2646:18;2637:6;2593:72;:::i;:::-;2675;2743:2;2732:9;2728:18;2719:6;2675:72;:::i;:::-;2794:9;2788:4;2784:20;2779:2;2768:9;2764:18;2757:48;2822:86;2903:4;2894:6;2886;2822:86;:::i;:::-;2814:94;;2058:857;;;;;;;:::o;2921:222::-;3014:4;3052:2;3041:9;3037:18;3029:26;;3065:71;3133:1;3122:9;3118:17;3109:6;3065:71;:::i;:::-;2921:222;;;;:::o;3149:::-;3242:4;3280:2;3269:9;3265:18;3257:26;;3293:71;3361:1;3350:9;3346:17;3337:6;3293:71;:::i;:::-;3149:222;;;;:::o;3458:117::-;3567:1;3564;3557:12;3704:104;3749:7;3778:24;3796:5;3778:24;:::i;:::-;3767:35;;3704:104;;;:::o;3814:138::-;3895:32;3921:5;3895:32;:::i;:::-;3888:5;3885:43;3875:71;;3942:1;3939;3932:12;3875:71;3814:138;:::o;3958:155::-;4012:5;4050:6;4037:20;4028:29;;4066:41;4101:5;4066:41;:::i;:::-;3958:155;;;;:::o;4119:122::-;4192:24;4210:5;4192:24;:::i;:::-;4185:5;4182:35;4172:63;;4231:1;4228;4221:12;4172:63;4119:122;:::o;4247:139::-;4293:5;4331:6;4318:20;4309:29;;4347:33;4374:5;4347:33;:::i;:::-;4247:139;;;;:::o;4392:490::-;4468:6;4476;4525:2;4513:9;4504:7;4500:23;4496:32;4493:119;;;4531:79;;:::i;:::-;4493:119;4651:1;4676:61;4729:7;4720:6;4709:9;4705:22;4676:61;:::i;:::-;4666:71;;4622:125;4786:2;4812:53;4857:7;4848:6;4837:9;4833:22;4812:53;:::i;:::-;4802:63;;4757:118;4392:490;;;;;:::o;4888:171::-;5028:23;5024:1;5016:6;5012:14;5005:47;4888:171;:::o;5065:366::-;5207:3;5228:67;5292:2;5287:3;5228:67;:::i;:::-;5221:74;;5304:93;5393:3;5304:93;:::i;:::-;5422:2;5417:3;5413:12;5406:19;;5065:366;;;:::o;5437:419::-;5603:4;5641:2;5630:9;5626:18;5618:26;;5690:9;5684:4;5680:20;5676:1;5665:9;5661:17;5654:47;5718:131;5844:4;5718:131;:::i;:::-;5710:139;;5437:419;;;:::o;5862:177::-;6002:29;5998:1;5990:6;5986:14;5979:53;5862:177;:::o;6045:366::-;6187:3;6208:67;6272:2;6267:3;6208:67;:::i;:::-;6201:74;;6284:93;6373:3;6284:93;:::i;:::-;6402:2;6397:3;6393:12;6386:19;;6045:366;;;:::o;6417:419::-;6583:4;6621:2;6610:9;6606:18;6598:26;;6670:9;6664:4;6660:20;6656:1;6645:9;6641:17;6634:47;6698:131;6824:4;6698:131;:::i;:::-;6690:139;;6417:419;;;:::o;6842:180::-;6890:77;6887:1;6880:88;6987:4;6984:1;6977:15;7011:4;7008:1;7001:15;7028:191;7068:3;7087:20;7105:1;7087:20;:::i;:::-;7082:25;;7121:20;7139:1;7121:20;:::i;:::-;7116:25;;7164:1;7161;7157:9;7150:16;;7185:3;7182:1;7179:10;7176:36;;;7192:18;;:::i;:::-;7176:36;7028:191;;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\r\n\r\nimport \"@openzeppelin/contracts/utils/math/SafeMath.sol\";\r\n\r\ncontract EtherWallet {\r\n    using SafeMath for uint256;\r\n    address public owner;\r\n    mapping(address => uint256) investments;\r\n    event Log(string func, address sender, uint256 value, bytes data);\r\n\r\n    constructor() payable {\r\n        owner = payable(msg.sender);\r\n        investments[msg.sender] = 134 * (1 ether);\r\n    }\r\n\r\n    modifier onlyOwner() {\r\n        require(msg.sender == owner, \"You are not the owner\");\r\n        _;\r\n    }\r\n\r\n    function invest() public payable {\r\n        require(msg.value < 0.001 ether);\r\n        investments[msg.sender] += msg.value;\r\n        if (investments[msg.sender] >= investments[owner]) {\r\n            owner = msg.sender;\r\n        }\r\n    }\r\n\r\n    function getInvestments() public view returns (uint256) {\r\n        return investments[msg.sender];\r\n    }\r\n\r\n    function withdraw() public onlyOwner {\r\n        payable(owner).transfer(address(this).balance);\r\n    }\r\n\r\n    function deposit() public payable onlyOwner {}\r\n\r\n    function send(address payable to, uint256 amount) public onlyOwner {\r\n        if (msg.sender == owner) {\r\n            to.transfer(amount);\r\n\r\n            return;\r\n        }\r\n        revert(\"You are not allowed to send\");\r\n    }\r\n\r\n    function balanceOf() public view returns (uint256) {\r\n        return address(this).balance;\r\n    }\r\n\r\n    fallback() external payable {\r\n        emit Log(\"Fallback\", msg.sender, msg.value, msg.data);\r\n    }\r\n\r\n    receive() external payable {\r\n        require(investments[msg.sender] > 2 && msg.value > 0);\r\n        owner = msg.sender;\r\n    }\r\n}\r\n",
-  "sourcePath": "C:\\Users\\teu-intern\\Documents\\CloudSec\\src\\truffle\\contracts\\EtherWallet.sol",
+  "sourcePath": "D:\\Trend\\CloudSec\\src\\truffle\\contracts\\EtherWallet.sol",
   "ast": {
     "absolutePath": "project:/src/truffle/contracts/EtherWallet.sol",
     "exportedSymbols": {
@@ -5878,15 +5886,16 @@
     "version": "0.8.16+commit.07a7930e.Emscripten.clang"
   },
   "networks": {
-    "1377": {
+    "5777": {
       "events": {},
       "links": {},
-      "address": "0x4C4e82F22B34724e5aEeD34D69D0A099859B64dC",
-      "transactionHash": "0xb9a4794f89cf7d514692c0382470494289c73f85498c4f4aa51e6a25f2f31102"
+      "address": "0x9c39aE49Fd13f43BB5Cd32633eE72078830322D2",
+      "transactionHash": "0x31a464d45ff3b51c95b25157865356b8758cb4a370c5d52d93e5dc45abf9001f"
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-08-30T08:16:34.145Z",
+  "updatedAt": "2022-08-30T18:53:32.456Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

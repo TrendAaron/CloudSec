@@ -12,7 +12,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/truffle/contracts/Dino.sol\":\"Dino\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/truffle/contracts/Dino.sol\":{\"keccak256\":\"0xb75ba11520987e0feb160bda35cbbebbbbc8757db6b3a3c5eb8d87fdf3422c0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://075c1d4dfacd3c05a8a9683b6645234f551f4c2aa6a19996a3ae5fac2dfd48b5\",\"dweb:/ipfs/QmQMx92jaqTcrPsFxwjZj5RJdA7L5P7v9q7rJMRMYypePp\"]}},\"version\":1}",
@@ -251,7 +252,7 @@
   "sourceMap": "67:1293:5:-:0;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "67:1293:5:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1263:94;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;;1304:4;1328:21;1321:28;;1263:94;:::o;7:77:21:-;44:7;73:5;62:16;;7:77;;;:::o;90:118::-;177:24;195:5;177:24;:::i;:::-;172:3;165:37;90:118;;:::o;214:222::-;307:4;345:2;334:9;330:18;322:26;;358:71;426:1;415:9;411:17;402:6;358:71;:::i;:::-;214:222;;;;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.0 <0.9.0; \r\ncontract Dino {\r\n/*\r\n                                                                I NEED MONEY PLEASE!\r\n                                                     ___._\r\n                                                   .'  <0>'-.._\r\n                                                  /  /.--.____\")\r\n                                                 |   \\   __.-'~\r\n                                                 |  :  -'/\r\n                                                /:.  :.-'\r\n__________                                     | : '. |\r\n'--.____  '--------.______       _.----.-----./      :/\r\n        '--.__            `'----/       '-.      __ :/\r\n              '-.___           :           \\   .'  )/\r\n                    '---._           _.-'   ] /  _/\r\n                         '-._      _/     _/ / _/\r\n                             \\_ .-'____.-'__< |  \\___\r\n                               <_______.\\    \\_\\_---.7\r\n                              |   /'=r_.-'     _\\\\ =/\r\n                          .--'   /            ._/'>\r\n                        .'   _.-'\r\n                       / .--'\r\n                      /,/\r\n                      |/`)\r\n                      'c=,\r\n*/\r\n \r\n \r\n \r\n    function balanceOf() view public returns(uint) {\r\n        return address(this).balance;\r\n    }\r\n}\r\n",
-  "sourcePath": "C:\\Users\\teu-intern\\Documents\\CloudSec\\src\\truffle\\contracts\\Dino.sol",
+  "sourcePath": "D:\\Trend\\CloudSec\\src\\truffle\\contracts\\Dino.sol",
   "ast": {
     "absolutePath": "project:/src/truffle/contracts/Dino.sol",
     "exportedSymbols": {
@@ -445,21 +446,16 @@
     "version": "0.8.16+commit.07a7930e.Emscripten.clang"
   },
   "networks": {
-    "1377": {
-      "events": {},
-      "links": {},
-      "address": "0x7b8E83bA479A4f250f65DB08C06085F4Cf6Fed3b",
-      "transactionHash": "0x01c511a2ccba35c9dd1d58e98cd2f7840c0ab8b5be5af6a02d1b09ae8c652fe8"
-    },
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xED34a8959F5aFC1978C1607aE8E76717bd85311e",
-      "transactionHash": "0xa0624de6e6b3df6bd4b2964adff84514b2b477ff6e055f2d2643e4116dc248c6"
+      "address": "0x071488a66a6DA090CB36FB5DbD74C2f7B71D357C",
+      "transactionHash": "0x08aa62c9b2b63f430c120a3e5d663512b09ff791ba7ef098a2565cca04d7852f"
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-08-30T08:16:34.072Z",
+  "updatedAt": "2022-08-30T18:53:28.730Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

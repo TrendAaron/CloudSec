@@ -30,7 +30,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.6.0 <0.9.0; \r\ninterface Tree {\r\n  function isLastBranch(uint) external returns (bool);\r\n}\r\n \r\n \r\ncontract Branches {\r\n \r\n/*\r\n                            (҂‾ ▵‾)︻デ═一\r\n                            # #### ####\r\n                        ### \\/#|### |/####\r\n                       ##\\/#/ \\||/##/_/##/_#\r\n                     ###  \\/###|/ \\/ # ###\r\n                   ##_\\_#\\_\\## | #/###_/_####\r\n                  ## #### # \\ #| /  #### ##/##\r\n                    __#_--###`  |{,###---###-~\r\n                             \\ }{\r\n                              }}{\r\n                              }}{\r\n                              {{}\r\n                        , -=-~{ .-^- _                                       (˚▽˚’!)/                                                                                    \r\n                              `}\r\n                               {                                                                  \r\n  */\r\n \r\n  bool public top;\r\n  uint public branch;\r\n \r\n  function climb(uint _branch) public {\r\n    Tree tree = Tree(msg.sender);\r\n \r\n    if (!tree.isLastBranch(_branch)) {\r\n      branch = _branch;\r\n      top = tree.isLastBranch(branch);\r\n    }\r\n  }\r\n \r\n  function see() view public returns(string memory){\r\n    require(top == true,\"You haven't reached the top yet\");\r\n    return \"clear vision of the target!\";\r\n  }\r\n \r\n}\r\n",
-  "sourcePath": "C:\\Users\\teu-intern\\Documents\\CloudSec\\src\\truffle\\contracts\\Branches.sol",
+  "sourcePath": "D:\\Trend\\CloudSec\\src\\truffle\\contracts\\Branches.sol",
   "ast": {
     "absolutePath": "project:/src/truffle/contracts/Branches.sol",
     "exportedSymbols": {
@@ -846,7 +846,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-08-30T08:16:33.949Z",
+  "updatedAt": "2022-08-30T18:53:21.760Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
