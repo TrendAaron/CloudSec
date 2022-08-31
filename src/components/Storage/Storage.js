@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import storageContract from "../../truffle/build/contracts/Storage.json";
-import mineContract from "../../truffle/build/contracts/Mine.json";
+import { Button } from "./index-styled";
+// import mineContract from "../../truffle/build/contracts/Mine.json";
 
 function Storage({ web3, nId, account }) {
   const [walletBalance, setWalletBalance] = useState();
@@ -15,7 +16,7 @@ function Storage({ web3, nId, account }) {
   useEffect(() => {
     const loadData = async () => {
       setWalletAddress(storageContract.networks[nId]?.address);
-      setMineAddress(mineContract.networks[nId]?.address);
+      // setMineAddress(mineContract.networks[nId]?.address);
       if (walletAddress) {
         const temp2 = await Storage.methods.balanceOf().call();
         const temp3 = await Storage.methods.owner().call();
@@ -24,16 +25,23 @@ function Storage({ web3, nId, account }) {
       }
     };
     loadData();
-  }, [walletAddress, walletOwner, walletBalance, web3, nId, account]);
+  }, [
+    walletAddress,
+    walletOwner,
+    walletBalance,
+    Storage.methods,
+    web3,
+    nId,
+    account,
+  ]);
 
   const getBalance = async () => {
-    let nice = await Storage.methods.balanceOf().call();
-    console.log(nice);
+    let bal = await Storage.methods.balanceOf().call();
+    alert(bal);
   };
 
   const getOwner = () => {
-    console.log(walletOwner);
-    return walletOwner;
+    alert("The wallet Owner now is: " + walletOwner);
   };
 
   const getWithdraw = async () => {
@@ -41,26 +49,26 @@ function Storage({ web3, nId, account }) {
   };
 
   const ThisIsMine = async () => {
+    /*
+    User needs to be able to call 
+    this function to call the fallback function
+    */
     let txparam = {
       to: walletAddress,
       from: account,
       value: "0x0000",
     };
-    await window.ethereum
-      .request({ method: "eth_sendTransaction", params: [txparam] })
-      .then(function (txparam) {
-        console.log(txparam);
-      });
-    console.log();
+    await window.ethereum.request({
+      method: "eth_sendTransaction",
+      params: [txparam],
+    });
   };
-
   return (
     <>
-      <button onClick={getWithdraw}> Withdraw</button> &nbsp;
-      <button onClick={getBalance}> balanceOf</button> &nbsp;
-      <button onClick={getOwner}> Owner </button> &nbsp;
-      <button onClick={ThisIsMine}> this is mine!</button>
-      <h1> {walletAddress}</h1>
+      <Button onClick={getWithdraw}> Withdraw</Button> &nbsp;
+      <Button onClick={getBalance}> balanceOf</Button> &nbsp;
+      <Button onClick={getOwner}> Owner </Button> &nbsp;
+      <Button onClick={ThisIsMine}> this is mine!</Button>
     </>
   );
 }

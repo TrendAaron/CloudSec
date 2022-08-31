@@ -12,8 +12,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -50,8 +49,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -94,8 +92,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_regTag\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"_licenseNum\",\"type\":\"string\"}],\"name\":\"getID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_plateNum\",\"type\":\"uint256\"}],\"name\":\"getregTag\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"newReg\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_plateNum\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_ownerName\",\"type\":\"string\"}],\"name\":\"regNewVehicle\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_regTag\",\"type\":\"bytes32\"}],\"name\":\"regTagCheck\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/truffle/contracts/VehicleRegister.sol\":\"VehicleRegister\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/truffle/contracts/VehicleRegister.sol\":{\"keccak256\":\"0x0cc87dfe80ca7a126ed92298f1d582619bd44e459c062b2c87387fabb3caa9ec\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1f50720274f79ced59d28793c4d77e86e6f81b409a458520d2e1e43736934e93\",\"dweb:/ipfs/QmYAB9wkbAwATSk8TiSVmf1dJnxwnHkxYSz9y1eWBEtekQ\"]}},\"version\":1}",
@@ -9856,8 +9853,7 @@
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-08-30T18:53:49.952Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-08-31T15:55:17.475Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

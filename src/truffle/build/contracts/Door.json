@@ -10,8 +10,7 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "constructor",
-      "payable": true
+      "type": "constructor"
     },
     {
       "inputs": [],
@@ -24,8 +23,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -38,8 +36,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -52,8 +49,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -79,8 +75,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -5241,8 +5236,7 @@
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-08-30T18:53:31.234Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-08-31T15:55:17.375Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -12,8 +12,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/src/truffle/contracts/Dino.sol\":\"Dino\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/truffle/contracts/Dino.sol\":{\"keccak256\":\"0xb75ba11520987e0feb160bda35cbbebbbbc8757db6b3a3c5eb8d87fdf3422c0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://075c1d4dfacd3c05a8a9683b6645234f551f4c2aa6a19996a3ae5fac2dfd48b5\",\"dweb:/ipfs/QmQMx92jaqTcrPsFxwjZj5RJdA7L5P7v9q7rJMRMYypePp\"]}},\"version\":1}",
@@ -454,8 +453,7 @@
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-08-30T18:53:28.730Z",
-  "networkType": "ethereum",
+  "updatedAt": "2022-08-31T15:55:17.367Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
