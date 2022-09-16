@@ -27,16 +27,13 @@ const Switch = () => {
         <Title>How To Play</Title>
         <Box>***** LOOK FOR THE VULNERABILITY AT THE SMART CONTRACT *****</Box>
         <Box>1.Open Remix IDE</Box>
-        <Box>2. Select Seller Workspace</Box>
+        <Box>2. Select Switch Workspace</Box>
         <Box>
-          3a. Call the createInstance with the second account as the player
+          3. Call the createInstance with the second account as the player
           address
         </Box>
-        <Box>
-          3b. Get the _seller address at the log [this is the address that you
-          need to attack]{" "}
-        </Box>
-        <h4>4. Hack the SMART CONTRACT!</h4>
+        
+        <Box>4. Hack the SMART CONTRACT!</Box>
         <CodeDiv>
         <pre>
           <Code>

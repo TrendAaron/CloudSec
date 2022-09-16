@@ -29,70 +29,54 @@ const Timezone = () => {
         <Title>How To Play</Title>
         <Box>***** LOOK FOR THE VULNERABILITY AT THE SMART CONTRACT *****</Box>
         <Box>1.Open Remix IDE</Box>
-        <Box>2. Select Seller Workspace</Box>
+        <Box>2. Select Timezone Workspace</Box>
         <Box>
-          3a. Call the createInstance with the second account as the player
+          3. Call the createInstance with the second account as the player
           address
         </Box>
-        <Box>
-          3b. Get the _seller address at the log [this is the address that you
-          need to attack]{" "}
-        </Box>
-        <h4>4. Hack the SMART CONTRACT!</h4>
+        
+        <Box>4. Hack the SMART CONTRACT!</Box>
         <CodeDiv>
         <pre>
           <code>
             {" "}
-            {` // SPDX-License-Identifier: MIT
-                pragma solidity ^0.8.16;
-                interface Customer {
-                  function getPrice() external view returns (uint);
-                }
-                
-                contract Seller {
-                  /*
-                
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒██████████▓▓▓▓▓▓▓▓▓▓
-                  ██████▓▓▓▓██████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒▒▒██████████▓▓▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒██▒▒▒▒▒▒▒▒████▓▓▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒▒▒    ████▒▒▒▒      ▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒                  ██████▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒      ██          ██████▒▒▒▒▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒▒▒      ████      ██████▒▒▒▒▒▒▒▒▓▓
-                  ▓▓▓▓▓▓            ▒▒▒▒▒▒▒▒▒▒      ████▓▓██████  ▒▒▒▒▒▒▒▒▒▒▓▓
-                  ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒      ██████        ▒▒▒▒▒▒▒▒▒▒▓▓
-                  ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░              ▒▒▒▒▒▒▒▒▒▒▒▒▓▓
-                  ▓▓░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒              ▒▒▒▒▒▒▒▒▒▒▒▒▓▓
-                  ▓▓          ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓
-                  ▓▓▒▒▒▒▒▒▒▒                                                ▓▓
-                  ▓▓▒▒▒▒▒▒▒▒                                                ▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓
-                  */
-                    uint public itemPrice = 3000;
-                    bool public isItemSold;
-                    address public owner;
-                
-                    constructor() {
-                      owner = msg.sender;
-                    }
-                
-                    function itemSoldPrice() public view returns (uint){
-                      require(msg.sender == owner,"you are not the seller");
-                        require( isItemSold == true, "Item is still not sold");
-                          require( itemPrice >= 3000, "You have been scammed!!");
-                              return itemPrice;
-                    }
-                
-                    function buyItem() public {
-                      Customer _customer = Customer(msg.sender);
-                      if (_customer.getPrice() >= itemPrice && !isItemSold) {
-                          isItemSold = true;
-                          itemPrice = _customer.getPrice();
-                          }
-                      }
-                }
+            {` 
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.0 <0.9.0;
+contract Timezone {
+  // public library contracts
+  address public tz1Library;
+  address public tz2Library;
+  address public owner;
+  uint storedTime;
+  // Sets the function signature for delegatecall
+  bytes4 constant setTimeSignature = bytes4(keccak256("setTime(uint256)"));
+  constructor(address _timeZone1LibraryAddress, address _timeZone2LibraryAddress) {
+    tz1Library = _timeZone1LibraryAddress;
+    tz2Library = _timeZone2LibraryAddress;
+    owner = msg.sender;
+  }
+  // set the time for timezone 1
+  function setFirstTime(uint _timeStamp) public {
+    tz1Library.delegatecall(abi.encodePacked(setTimeSignature, _timeStamp));
+  }
+  // set the time for timezone 2
+  function setSecondTime(uint _timeStamp) public {
+    tz2Library.delegatecall(abi.encodePacked(setTimeSignature, _timeStamp));
+  }
+  // set the time for timezone 3
+  function setThirdTime(uint _timeStamp) public {
+    tz2Library.delegatecall(abi.encodePacked(setTimeSignature, _timeStamp));
+  }
+  }
+  // Simple library contract to set the time
+  contract LibraryContract {
+  // stores a timestamp
+    uint storedTime;
+    function setTime(uint _time) public {
+    storedTime = _time;
+  }
+}
 
               `}
           </code>

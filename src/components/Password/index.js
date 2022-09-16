@@ -1,17 +1,16 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
+  margin:auto;
   height: 50px;
   width: 150px;
   font-size: 30px;
   background-color: #000000;
   color: #ffffff;
   border-radius: 5px;
-  margin-bottom: 10px;
 `;
 
 export const InstatiateButton = styled.button`
-  margin-top: 10px;
   height: 400px;
   width: 900px;
   font-size: 30px;
@@ -94,6 +93,8 @@ width: 900px;
 export const Title = styled.h2`
 font-size: 50px;
 `
+
+
 export const CenterDivGame = styled.div`
 margin: auto;
 justify-content:space-evenly;

@@ -29,70 +29,39 @@ const GasDefense = () => {
         <Title>How To Play</Title>
         <Box>***** LOOK FOR THE VULNERABILITY AT THE SMART CONTRACT *****</Box>
         <Box>1.Open Remix IDE</Box>
-        <Box>2. Select Seller Workspace</Box>
+        <Box>2. Select GasDefense Workspace</Box>
         <Box>
-          3a. Call the createInstance with the second account as the player
+          3. Call the createInstance with the second account as the player
           address
         </Box>
-        <Box>
-          3b. Get the _seller address at the log [this is the address that you
-          need to attack]{" "}
-        </Box>
-        <h4>4. Hack the SMART CONTRACT!</h4>
+        <Box>4. Hack the SMART CONTRACT!</Box>
         <CodeDiv>
         <pre>
           <code>
             {" "}
-            {` // SPDX-License-Identifier: MIT
-                pragma solidity ^0.8.16;
-                interface Customer {
-                  function getPrice() external view returns (uint);
-                }
-                
-                contract Seller {
-                  /*
-                
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒██████████▓▓▓▓▓▓▓▓▓▓
-                  ██████▓▓▓▓██████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒▒▒██████████▓▓▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒██▒▒▒▒▒▒▒▒████▓▓▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒▒▒    ████▒▒▒▒      ▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒                  ██████▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒      ██          ██████▒▒▒▒▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒▒▒      ████      ██████▒▒▒▒▒▒▒▒▓▓
-                  ▓▓▓▓▓▓            ▒▒▒▒▒▒▒▒▒▒      ████▓▓██████  ▒▒▒▒▒▒▒▒▒▒▓▓
-                  ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒      ██████        ▒▒▒▒▒▒▒▒▒▒▓▓
-                  ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░              ▒▒▒▒▒▒▒▒▒▒▒▒▓▓
-                  ▓▓░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒              ▒▒▒▒▒▒▒▒▒▒▒▒▓▓
-                  ▓▓          ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓
-                  ▓▓▒▒▒▒▒▒▒▒                                                ▓▓
-                  ▓▓▒▒▒▒▒▒▒▒                                                ▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓
-                  */
-                    uint public itemPrice = 3000;
-                    bool public isItemSold;
-                    address public owner;
-                
-                    constructor() {
-                      owner = msg.sender;
-                    }
-                
-                    function itemSoldPrice() public view returns (uint){
-                      require(msg.sender == owner,"you are not the seller");
-                        require( isItemSold == true, "Item is still not sold");
-                          require( itemPrice >= 3000, "You have been scammed!!");
-                              return itemPrice;
-                    }
-                
-                    function buyItem() public {
-                      Customer _customer = Customer(msg.sender);
-                      if (_customer.getPrice() >= itemPrice && !isItemSold) {
-                          isItemSold = true;
-                          itemPrice = _customer.getPrice();
-                          }
-                      }
-                }
+            {` 
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
+contract GasDefense {
+  using SafeMath for uint256;
+  address public contractOwner;
+  constructor() {
+    contractOwner = msg.sender;
+  }
+  modifier firstChallenge() {
+    require(msg.sender != tx.origin);
+    _;
+  }
+  modifier secondChallenge() {
+    require(gasleft().mod(8191) == 0);
+    _;
+  }
+  function claimOwnership() public firstChallenge secondChallenge returns (bool) {
+    contractOwner = tx.origin;
+    return true;
+  }
+}
 
               `}
           </code>

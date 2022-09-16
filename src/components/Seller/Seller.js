@@ -29,14 +29,10 @@ const Seller = () => {
         </Box>
         <Box>2. Select Seller Workspace</Box>
         <Box>
-          3a. Call the createInstance with the second account as the player
+          3. Call the createInstance with the second account as the player
           address
         </Box>
-        <Box>
-          3b. Get the _seller address at the log [this is the address that you
-          need to attack]{" "}
-        </Box>
-        <h4>4. Hack the SMART CONTRACT!</h4>
+        <Box>4. Hack the SMART CONTRACT!</Box>
         <CodeDiv>
         <pre>
           <Code>

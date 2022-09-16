@@ -4,8 +4,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     margin:auto;
     display: grid; 
-    grid-template-columns: repeat(5,150px);
-    grid-template-rows: repeat(3, 150px);
+    grid-template-columns: repeat(4,150px);
 
   
 `

@@ -29,70 +29,38 @@ const TopBidder = () => {
         <Title>How To Play</Title>
         <Box>***** LOOK FOR THE VULNERABILITY AT THE SMART CONTRACT *****</Box>
         <Box>1.Open Remix IDE</Box>
-        <Box>2. Select Seller Workspace</Box>
+        <Box>2. Select TopBidder Workspace</Box>
         <Box>
-          3a. Call the createInstance with the second account as the player
+          3. Call the createInstance with the second account as the player
           address
         </Box>
-        <Box>
-          3b. Get the _seller address at the log [this is the address that you
-          need to attack]{" "}
-        </Box>
-        <h4>4. Hack the SMART CONTRACT!</h4>
+        <Box>4. Hack the SMART CONTRACT!</Box>
         <CodeDiv>
         <pre>
           <code>
             {" "}
-            {` // SPDX-License-Identifier: MIT
-                pragma solidity ^0.8.16;
-                interface Customer {
-                  function getPrice() external view returns (uint);
-                }
-                
-                contract Seller {
-                  /*
-                
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒██████████▓▓▓▓▓▓▓▓▓▓
-                  ██████▓▓▓▓██████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒▒▒██████████▓▓▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒██▒▒▒▒▒▒▒▒████▓▓▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒▒▒    ████▒▒▒▒      ▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒                  ██████▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒      ██          ██████▒▒▒▒▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  ▒▒▒▒▒▒▒▒▒▒      ████      ██████▒▒▒▒▒▒▒▒▓▓
-                  ▓▓▓▓▓▓            ▒▒▒▒▒▒▒▒▒▒      ████▓▓██████  ▒▒▒▒▒▒▒▒▒▒▓▓
-                  ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒      ██████        ▒▒▒▒▒▒▒▒▒▒▓▓
-                  ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░              ▒▒▒▒▒▒▒▒▒▒▒▒▓▓
-                  ▓▓░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒              ▒▒▒▒▒▒▒▒▒▒▒▒▓▓
-                  ▓▓          ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▓▓
-                  ▓▓▒▒▒▒▒▒▒▒                                                ▓▓
-                  ▓▓▒▒▒▒▒▒▒▒                                                ▓▓
-                  ▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓
-                  */
-                    uint public itemPrice = 3000;
-                    bool public isItemSold;
-                    address public owner;
-                
-                    constructor() {
-                      owner = msg.sender;
-                    }
-                
-                    function itemSoldPrice() public view returns (uint){
-                      require(msg.sender == owner,"you are not the seller");
-                        require( isItemSold == true, "Item is still not sold");
-                          require( itemPrice >= 3000, "You have been scammed!!");
-                              return itemPrice;
-                    }
-                
-                    function buyItem() public {
-                      Customer _customer = Customer(msg.sender);
-                      if (_customer.getPrice() >= itemPrice && !isItemSold) {
-                          isItemSold = true;
-                          itemPrice = _customer.getPrice();
-                          }
-                      }
-                }
+            {` 
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+contract TopBidder {
+  address payable topBidder;
+  uint public currentBid;
+  address payable public owner;
+  constructor() payable {
+    owner = payable(msg.sender);
+    topBidder = payable(msg.sender);
+    currentBid = msg.value;
+  }
+  receive() external payable {
+    require(msg.value >= currentBid || msg.sender == owner);
+    topBidder.transfer(msg.value);
+    topBidder = payable(msg.sender);
+    currentBid = msg.value;
+  }
+  function _topBidder() public view returns (address payable) {
+    return topBidder;
+  }
+}
 
               `}
           </code>

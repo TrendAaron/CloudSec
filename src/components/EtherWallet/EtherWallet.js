@@ -9,6 +9,10 @@ import {
   Balance,
   InstanceB,
   CodeDiv,
+  Code, 
+  Box,
+  Title,
+  CenterDivGame
 } from "./index-styled";
 import etherWalletContract from "../../truffle/build/contracts/EtherWallet.json";
 import EtherWalletFactory from "../../truffle/build/contracts/EtherWalletFactory.json";
@@ -59,7 +63,6 @@ const EtherWallet = ({ web3, nId, account }) => {
 
   const getWithdraw = async () => {
     await Contract.methods.withdraw().send({ from: account });
-    alert("Succesfully withdraw! [INSERT FLAG HERE]");
   };
 
   const getBalance = async () => {
@@ -71,7 +74,12 @@ const EtherWallet = ({ web3, nId, account }) => {
     let validate = await GameContract.methods
       .validateInstance(walletAddress, account)
       .call();
-    console.log(validate);
+    if(validate){
+      alert("Wm14aFp5QTlJRlJOUTFSR2UyRjZNM0oyZDNBd2NHaDFkV3h0ZFgwPQ==")
+    }
+    else{
+      alert("😛😛😛😛");
+    }
   };
 
   const handleInvest = async (event) => {
@@ -107,6 +115,97 @@ const EtherWallet = ({ web3, nId, account }) => {
       {/* <div className="mt-3"> */}
       <CenterDiv>
 
+      <Title>WHITDRAW</Title>
+        <Box>
+        A friend of yours is very into smart contracts, blockchains, and keeping his Ethereum wallet safe
+        and secure. Since you were over at his house, you wanted to prank him by taking the ownership
+        of his account and draining his account to see if he could take it back from you. While working
+        on this prank, you notice that you can only take ownership of his account if you have more Ether
+        in your wallet, but since you are not into these things as much as him, you don’t have the needed
+        amount so you are faced with another challenge.
+        </Box>
+        <Break></Break>
+        <Title>Objectives</Title>
+        <Box>The player has to gain the ownership of the account and drain its contributions</Box>
+        <Break></Break>
+        <CodeDiv>
+        <pre>
+          <Code>
+            {" "}
+            {` 
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+
+contract EtherWallet {
+    using SafeMath for uint256;
+    address public owner;
+    mapping(address => uint256) investments;
+    event Log(string func, address sender, uint256 value, bytes data);
+
+    constructor() payable {
+        owner = payable(msg.sender);
+        investments[msg.sender] = 134 * (1 ether);
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "You are not the owner");
+        _;
+    }
+
+    function invest() public payable {
+        require(msg.value < 0.001 ether);
+        investments[msg.sender] += msg.value;
+        if (investments[msg.sender] >= investments[owner]) {
+            owner = msg.sender;
+        }
+    }
+
+    function getInvestments() public view returns (uint256) {
+        return investments[msg.sender];
+    }
+
+    function withdraw() public onlyOwner {
+        payable(owner).transfer(address(this).balance);
+    }
+
+    function deposit() public payable onlyOwner {}
+
+    function send(address payable to, uint256 amount) public onlyOwner {
+        if (msg.sender == owner) {
+            to.transfer(amount);
+
+            return;
+        }
+        revert("You are not allowed to send");
+    }
+
+    function balanceOf() public view returns (uint256) {
+        return address(this).balance;
+    }
+
+    fallback() external payable {
+        emit Log("Fallback", msg.sender, msg.value, msg.data);
+    }
+
+    receive() external payable {
+        require(investments[msg.sender] > 2 && msg.value > 0);
+        owner = msg.sender;
+    }
+}
+
+              `}
+          </Code>
+        </pre>
+      </CodeDiv>
+
+        
+         
+
+<CenterDivGame>
+{instantiated ? (<> 
         <table className="table text-muted text-center">
           <tbody>
             <tr style={{ color: "black" }}>
@@ -123,7 +222,7 @@ const EtherWallet = ({ web3, nId, account }) => {
             </tr>
           </tbody>
         </table>
-            <>
+        
               <form onSubmit={handleInvest}>
                 <Input
                   type="number"
@@ -138,14 +237,16 @@ const EtherWallet = ({ web3, nId, account }) => {
               <Balance onClick={getBalance}>Balance</Balance>&nbsp;
               <Withdraw onClick={getWithdraw}>Withdraw</Withdraw> &nbsp;
               <Button onClick={validatePlayer}>Validate</Button>
-            </>
-          {/* {instantiated ? (
+            </> 
            
-          ) : (
-            <InstanceB onClick={createInstance}>create Instance</InstanceB>
-          )} */}
+           ) : (
+             <InstanceB onClick={createInstance}>create Instance</InstanceB>
+           )}
+            
+        </CenterDivGame>
+        
         </CenterDiv>
-
+        
       {/* </div> */}
       
       <Break></Break>

@@ -10,3 +10,4 @@ console.log(address);
 module.exports = (deployer) => {
   deployer.deploy(Storage, address);
 };
+

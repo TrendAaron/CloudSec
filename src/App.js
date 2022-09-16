@@ -74,16 +74,16 @@ function App() {
           <Route path="/defense" element={<Defense/>} />
           <Route path="/dino" element={<Dino/>}/>
           <Route path="/door" element={<Door/>}/>
-          <Route path="/etherwallet" element={<EtherWallet web3={web3} nId={networkId} account={account} />}/>
+          <Route path="/withdraw" element={<EtherWallet web3={web3} nId={networkId} account={account} />}/>
           <Route path="/gasdefense" element={<GasDefense/>} />
           <Route path="/hand" element={<Hand/>}/>
-          <Route path="/password" element={<Password web3={web3} nId={networkId} account={account} />}/>
+          <Route path="/unlock" element={<Password web3={web3} nId={networkId} account={account} />}/>
           <Route path="/seller" element={<Seller/>} />
-          <Route path="/storage" element={<Storage web3={web3} nId={networkId} account={account} />}/>
+          <Route path="/consign" element={<Storage web3={web3} nId={networkId} account={account} />}/>
           <Route path="/switch" element={<Switch/>}/>
           <Route path="/timezone" element={<Timezone/>}/>
           <Route path="/topbidder" element={<Topbidder/>}/>
-          <Route path="/transfer" element={<Transfer/>}/>
+          <Route path="/transfer" element={<Transfer web3={web3} nId={networkId} account={account} />}/>
 
           
         </Routes>
