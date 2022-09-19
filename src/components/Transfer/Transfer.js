@@ -35,8 +35,8 @@ const Transfer = ({ web3, nId, account }) => {
   const init = async () => {
     try{
       setWalletAddress(await transferContract.networks[nId]?.address);
-      await Contract.methods.balanceOf(account).call();
       setInstantiated(true);
+      await Contract.methods.balanceOf(account).call();
     } catch (error){
       console.log(error);
       

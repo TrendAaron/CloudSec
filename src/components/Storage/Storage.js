@@ -83,20 +83,18 @@ function Storage({ web3, nId, account }) {
   };
 
   const Validate = async () => {
-    
-
     let validate = await GameContract.methods
     .validateInstance(walletAddress, account)
     .call();
     if(validate){
-      alert("MZWGCZZ5KRGUGVCGPNTXI5TYOJZDENTIMRVDK3TYPF6Q====");
+      alert("KRGUGVCGPN3HGNJUGFTGM2DMOBXWI4LQNF6Q====");
     }else{
       alert("😛😛😛😛");
     }
-    
-    
-
   }
+
+
+
   return (
     <>
         <CenterDiv>
@@ -176,7 +174,7 @@ contract Mine {
       
       
       }
-      
+    
       </CenterDiv>
      
     </>
