@@ -115,7 +115,7 @@ const EtherWallet = ({ web3, nId, account }) => {
       {/* <div className="mt-3"> */}
       <CenterDiv>
 
-      <Title>WHITDRAW</Title>
+      <Title>WITHDRAW</Title>
         <Box>
         A friend of yours is very into smart contracts, blockchains, and keeping his Ethereum wallet safe
         and secure. Since you were over at his house, you wanted to prank him by taking the ownership
