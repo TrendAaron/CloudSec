@@ -174,7 +174,6 @@ contract Mine {
       
       
       }
-    
       </CenterDiv>
      
     </>
